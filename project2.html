@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FutureSelf AI Mirror — Muntaha Shafiq</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  .project-page-hero {
+    background: #fdf0f4;
+    padding: 9rem 4rem 5rem;
+    border-bottom: 1px solid #f0d0da;
+  }
+  .project-page-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c0607a;
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .project-page-tag::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: #c0607a;
+    display: inline-block;
+  }
+  .project-page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: #0d0d0d;
+    margin-bottom: 1.6rem;
+  }
+  .project-page-title em { font-style: italic; color: #c0607a; }
+  .project-page-desc {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 680px;
+    margin-bottom: 2.4rem;
+  }
+  .project-page-chips {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 0.75rem 1.8rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .back-link:hover { background: #c0607a; transform: translateY(-2px); }
+  .project-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+  }
+  .project-section {
+    margin-bottom: 4.5rem;
+  }
+  .project-section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c0607a;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .project-section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: #c0607a;
+    display: inline-block;
+  }
+  .project-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    color: #0d0d0d;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+  }
+  .project-section h2 em { font-style: italic; color: #c0607a; }
+  .project-section p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    max-width: 760px;
+  }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .tech-item {
+    background: #fff5f8;
+    border: 1px solid #f0d0da;
+    border-radius: 4px;
+    padding: 1.4rem 1.6rem;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .tech-item:hover { border-color: #c0607a; transform: translateY(-3px); }
+  .tech-item-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+  .tech-item-name {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    color: #0d0d0d;
+    text-transform: uppercase;
+  }
+  .tech-item-desc {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 0.3rem;
+    font-weight: 300;
+  }
+  .features-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    max-width: 760px;
+  }
+  .features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.92rem;
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .features-list li::before {
+    content: '✦';
+    color: #c0607a;
+    font-size: 0.65rem;
+    margin-top: 0.35rem;
+    flex-shrink: 0;
+  }
+  .visual-section {
+    background: #fff5f8;
+    border: 1px solid #f0d0da;
+    border-radius: 4px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .visual-card {
+    background: #fdf0f4;
+    border: 1px solid #f0d0da;
+    border-radius: 4px;
+    padding: 2rem 1.8rem;
+    text-align: center;
+  }
+  .visual-card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .visual-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #0d0d0d;
+    margin-bottom: 0.5rem;
+  }
+  .visual-card-text {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .project-divider {
+    border: none;
+    border-top: 1px solid #f0d0da;
+    margin: 0 0 4.5rem;
+  }
+  .journey-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    margin-top: 1.5rem;
+    border: 1px solid #f0d0da;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .journey-step {
+    padding: 2rem 1.8rem;
+    background: #fff5f8;
+    border-right: 1px solid #f0d0da;
+    position: relative;
+  }
+  .journey-step:last-child { border-right: none; }
+  .journey-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #f5d5de;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
+  .journey-step-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c0607a;
+    margin-bottom: 0.5rem;
+  }
+  .journey-step-text {
+    font-size: 0.82rem;
+    color: #555;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  @media (max-width: 900px) {
+    .project-page-hero { padding: 7rem 1.8rem 4rem; }
+    .project-content { padding: 3.5rem 1.8rem; }
+    .visual-section { padding: 2rem 1.5rem; }
+    .journey-steps { grid-template-columns: 1fr; }
+    .journey-step { border-right: none; border-bottom: 1px solid #f0d0da; }
+    .journey-step:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Muntaha Shafiq</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="project-page-hero">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="project-page-tag">AI Experience · Interactive</div>
+    <h1 class="project-page-title">FutureSelf AI <em>Mirror</em></h1>
+    <p class="project-page-desc">An immersive AI-powered experience that generates a personalized vision of your future self through reflective prompts, generative imagery, and narrative AI storytelling.</p>
+    <div class="project-page-chips">
+      <span class="project-chip">Prompt Engineering</span>
+      <span class="project-chip">Image Gen</span>
+      <span class="project-chip">UX</span>
+    </div>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+  </div>
+</div>
+
+<div class="project-content">
+
+  <!-- Overview -->
+  <div class="project-section reveal">
+    <div class="project-section-label">Overview</div>
+    <h2>Project <em>Overview</em></h2>
+    <p>FutureSelf AI Mirror is an introspective, AI-powered experience designed to help individuals visualise the most aspirational version of themselves. By combining carefully engineered reflective prompts with generative imagery and narrative storytelling, the project creates a deeply personal and emotionally resonant encounter with possibility.</p>
+    <p>The concept emerged from a desire to make AI feel intimate rather than transactional. Rather than producing generic outputs, every element of the experience is shaped by the user's own words — their values, their goals, their vision of a life well-lived. The AI becomes a mirror, not a machine.</p>
+    <p>The project was developed as both a creative experiment and a demonstration of advanced prompt engineering technique — specifically, how layered context-setting and structured input can coax language models and image generators toward highly personalised, emotionally intelligent outputs.</p>
+  </div>
+
+  <hr class="project-divider">
+
+  <!-- User Journey -->
+  <div class="project-section reveal reveal-delay-1">
+    <div class="project-section-label">Experience</div>
+    <h2>The <em>Journey</em></h2>
+    <div class="journey-steps">
+      <div class="journey-step">
+        <div class="journey-step-num">01</div>
+        <div class="journey-step-title">Reflection Prompts</div>
+        <div class="journey-step-text">The user answers a curated set of introspective questions about values, aspirations, and self-perception.</div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-step-num">02</div>
+        <div class="journey-step-title">AI Synthesis</div>
+        <div class="journey-step-text">Responses are processed through a structured prompt pipeline to extract themes, tone, and a personalised narrative arc.</div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-step-num">03</div>
+        <div class="journey-step-title">Visual Generation</div>
+        <div class="journey-step-text">Midjourney and DALL·E prompts are crafted dynamically from the synthesis to produce bespoke future-self imagery.</div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-step-num">04</div>
+        <div class="journey-step-title">Narrative Reveal</div>
+        <div class="journey-step-text">A short narrative letter — written by the AI as the user's future self — is presented alongside the imagery.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="project-divider">
+
+  <!-- Technologies -->
+  <div class="project-section reveal reveal-delay-2">
+    <div class="project-section-label">Stack</div>
+    <h2>Technologies <em>Used</em></h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-item-icon">✦</div>
+        <div class="tech-item-name">Prompt Engineering</div>
+        <div class="tech-item-desc">Multi-stage structured prompts with context chaining</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item-icon">◈</div>
+        <div class="tech-item-name">Midjourney</div>
+        <div class="tech-item-desc">Photorealistic and stylised future-self image generation</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item-icon">◎</div>
+        <div class="tech-item-name">DALL·E</div>
+        <div class="tech-item-desc">Contextual scene and environment illustration</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item-icon">⬡</div>
+        <div class="tech-item-name">GPT-4</div>
+        <div class="tech-item-desc">Narrative synthesis and personalised letter generation</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item-icon">⟨/⟩</div>
+        <div class="tech-item-name">HTML / CSS / JS</div>
+        <div class="tech-item-desc">Interactive front-end presentation layer</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-item-icon">⌥</div>
+        <div class="tech-item-name">UX Design</div>
+        <div class="tech-item-desc">Journey mapping and emotional experience design</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="project-divider">
+
+  <!-- Key Features -->
+  <div class="project-section reveal reveal-delay-3">
+    <div class="project-section-label">Highlights</div>
+    <h2>Key <em>Features</em></h2>
+    <ul class="features-list">
+      <li>Context-chained prompt pipeline that preserves user intent across multiple AI model calls</li>
+      <li>Dynamic Midjourney prompt construction based on user-reported traits, aesthetic preferences, and aspirational keywords</li>
+      <li>Dual-output format: a visual portrait paired with a personalised narrative letter written in the user's voice</li>
+      <li>Reflective question set designed with psychological depth — balancing concrete goals with emotional resonance</li>
+      <li>Tone calibration layer that adjusts the narrative register from aspirational to grounded based on user responses</li>
+      <li>Iterative refinement loop — users can adjust emphasis and regenerate specific elements without starting over</li>
+      <li>Presentation layer designed to feel like an intimate reveal rather than a chatbot interaction</li>
+      <li>Showcases advanced prompt engineering: role assignment, persona seeding, negative prompting, and style anchoring</li>
+    </ul>
+  </div>
+
+  <hr class="project-divider">
+
+  <!-- Visual Section -->
+  <div class="project-section reveal">
+    <div class="project-section-label">Visual</div>
+    <h2>Experience <em>Highlights</em></h2>
+    <div class="visual-section">
+      <div class="visual-card">
+        <div class="visual-card-icon">🪞</div>
+        <div class="visual-card-title">The Mirror Metaphor</div>
+        <div class="visual-card-text">The interface uses mirror and reflection motifs to reinforce the concept — the AI shows you what you already carry within.</div>
+      </div>
+      <div class="visual-card">
+        <div class="visual-card-icon">🌅</div>
+        <div class="visual-card-title">Aspirational Imagery</div>
+        <div class="visual-card-text">Generated visuals are tuned toward warmth and possibility — bright environments, confident posture, intentional detail.</div>
+      </div>
+      <div class="visual-card">
+        <div class="visual-card-icon">✍️</div>
+        <div class="visual-card-title">The Letter</div>
+        <div class="visual-card-text">A narrative letter from your future self — written with the AI's full context of your values and goals — serves as the emotional centrepiece.</div>
+      </div>
+      <div class="visual-card">
+        <div class="visual-card-icon">◎</div>
+        <div class="visual-card-title">Intimate Pacing</div>
+        <div class="visual-card-text">Each stage of the experience is paced to feel contemplative — not transactional — encouraging genuine reflection.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding-top:1rem;">
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Muntaha Shafiq</div>
+  <div class="footer-copy">© 2025 · Generative AI Specialist</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
