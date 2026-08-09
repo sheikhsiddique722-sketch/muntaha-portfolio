@@ -9,7 +9,7 @@ The project showcases professional skills, projects, and contact information thr
 * Smooth scrolling effects
 * Projects showcase section
 * Contact section
-* Modern and professional UI
+* Modern and professional UI 
 
 ## Technologies Used
 
