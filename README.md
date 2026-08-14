@@ -11,7 +11,7 @@ The project showcases professional skills, projects, and contact information thr
 * Contact section  
 * Modern and professional UI 
 
-## Technologies Used 
+## Technologies Used  
 
 * HTML5
 * CSS3
