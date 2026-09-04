@@ -5,7 +5,7 @@ The project showcases professional skills, projects, and contact information thr
 
 ## Features   
   
-* Responsive design
+* Responsive design 
 * Smooth scrolling effects  
 * Projects showcase section 
 * Contact section  
