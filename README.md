@@ -4,7 +4,7 @@ A modern and responsive personal portfolio website developed using HTML, CSS, an
 The project showcases professional skills, projects, and contact information through a clean user interface and interactive design.
 
 ## Features   
- 
+  
 * Responsive design
 * Smooth scrolling effects  
 * Projects showcase section 
