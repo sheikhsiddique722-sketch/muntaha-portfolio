@@ -10,7 +10,7 @@ The project showcases professional skills, projects, and contact information thr
 * Projects showcase section 
 * Contact section   
 * Modern and professional UI 
-
+ 
 ## Technologies Used  
 
 * HTML5
